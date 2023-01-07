@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$_SESSION['currentPage'] = "emprecs";
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,7 @@
 		  	<div class="container pt-4">
 		  		<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item" aria-current="page">Dashboard</li>
+						<li class="breadcrumb-item" aria-current="page"><a href="index.php">Dashboard</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Employee Records</li>
 					</ol>
 				</nav>
@@ -24,8 +25,8 @@
 			  			}
 			  		?>
 			  	</div>
-		  		<div class="row">
-		  			<div class="col-md-11 container p-5 mx-5 card">
+		  		<div class="row px-5">
+		  			<div class="col-md-12 p-5 card">
 		  				<form action="backend.php" class="row g-3 needs-validation" method="POST">
 		  					<h3>New Employee Form</h3>
 		  					<hr>
@@ -81,7 +82,7 @@
 							</div>
 						</form>
 		  			</div>
-		  			<div class="col-md-12 container px-5 py-3 mx-5 mt-3 card">
+		  			<div class="col-md-12 px-5 py-3 mt-3 card">
 		  				<!-- <div class="container"> -->
 					  		<?php
 					  			// if (isset($_SESSION['ReadMessage'])) {
@@ -90,18 +91,17 @@
 					  			// }
 					  		?>
 					  	<!-- </div> -->
-				  		<table class="table table-striped text-center">
-				  			<tr>
-				  				<thead colspan="3">
-				  					<h4>Employee Records</h4>
-				  					<br>
-				  				</thead>
-				  			</tr>
-				  			<tr>
-				  				<th>EmpID</th>
-				  				<th>EmpName</th>
-				  				<th>EmpJoinDate</th>
-				  			</tr>
+					  	<h4 class="mt-3">Employee Records</h4>
+					  	<br>
+				  		<table class="table table-sm table-striped table-bordered table-light text-center w-100 table-responsive">
+			  				<thead>
+			  					<tr>
+			  						<th>EmpID</th>
+			  						<th>EmpName</th>
+			  						<th>EmpJoinDate</th>
+			  						<th>QR Code</th>
+			  					</tr>
+			  				</thead>
 				  			<?php
 				  				include 'backend2.php';
 				  				$rows = empRead();
@@ -113,16 +113,37 @@
 				  				<td><?php echo $rows->{$tmp}->empID; ?></td>
 				  				<td><?php echo $rows->{$tmp}->empName; ?></td>
 				  				<td><?php echo $rows->{$tmp}->empJoinDate; ?></td>
+				  				<td><img src="assets/qrcode.png" alt="Qrcode"></td>
 				  			</tr>
 				  			<?php
 				  				}
 				  				echo "<script>console.log('made it here');</script>";
 				  			?>
 				  		</table>
+				  		<nav aria-label="Page navigation">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">Next</a></li>
+							</ul>
+						</nav>
 				  	</div>
 		  		</div>
 		  	</div>
-
 		</main>
 		<!--Main layout-->
 

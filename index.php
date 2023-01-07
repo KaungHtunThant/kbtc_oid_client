@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	$_SESSION['currentPage'] = "index";
+?>
 <!DOCTYPE html>
 <html>
 	<?php include "includes/head.php"; ?>
