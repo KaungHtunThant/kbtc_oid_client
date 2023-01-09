@@ -49,7 +49,7 @@
 						<div class="modal" id="empCreate">
                             <div class="modal-dialog">
                                 <div class="modal-content ">
-                                	<form action="backend.php" class="needs-validation" method="POST">
+                                	<form action="postfunctions.php" class="needs-validation" method="POST">
 	                                    <!-- Modal Header -->
 	                                    <div class="modal-header">
 	                                        <h4 class="modal-title mx-auto">New Employee Form</h4>
@@ -80,8 +80,8 @@
 												</div>
 												<div class="col-12 mb-3">
 													<div class="form-outline">
-												  		<input type="text" class="form-control" id="EmpJoinDate" aria-describedby="inputGroupPrepend" name="EmpJoinDate" required />
-												  		<label for="EmpJoinDate" class="form-label">Join Date</label>
+												  		<input type="text" class="form-control" id="empJoinDate" aria-describedby="inputGroupPrepend" name="empJoinDate" required />
+												  		<label for="empJoinDate" class="form-label">Join Date</label>
 												  		<div class="valid-feedback">Valid Date</div>
 												  		<div class="invalid-feedback">Enter a valid date</div>
 													</div>
@@ -118,8 +118,8 @@
 												</div>
 												<div class="col-12 mb-3 text-left">
 													<div class="form-outline float-left">
-														<label for="NRC5" class="form-label float-left">Position</label>
-														<select name="NRC5" class="form-select" id="NRC5" id="validationCustom03">
+														<label for="empPositionID" class="form-label float-left">Position</label>
+														<select name="empPositionID" class="form-select" id="empPositionID">
 												  			<option value="1">IT Associate</option>
 												  			<option value="2">HR Associate</option>
 												  		</select>
@@ -127,8 +127,8 @@
 												</div>
 												<div class="col-12 mb-3 text-left">
 													<div class="form-outline float-left">
-														<label for="NRC6" class="form-label">Department</label>
-														<select name="NRC6" class="form-select" id="NRC6" id="validationCustom04">
+														<label for="empDeptID" class="form-label">Department</label>
+														<select name="empDeptID" class="form-select" id="empDeptID">
 												  			<option value="1">IT</option>
 												  			<option value="2">HR</option>
 												  		</select>
@@ -177,6 +177,7 @@
 				  				<td><?php echo $rows->{$tmp}->empJoinDate; ?></td>
 				  				<td>
 									<a class="btn btn-primary" data-toggle="modal" data-target="#ShowQR<?php echo $rows->{$tmp}->empID; ?>" >Show</a>
+									<a class="btn btn-primary" href="employee?empID=<?php echo $rows->{$tmp}->empID; ?>&&empKey=<?php echo $rows->{$tmp}->empKey; ?>" >Detail</a>
 				  				</td>
 					  			<!-- Modal -->
 								<div class="modal" id="ShowQR<?php echo $rows->{$tmp}->empID; ?>">

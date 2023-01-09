@@ -23,7 +23,7 @@ function empRead(){
 	}
 
 	// var_dump($result);
-
+	//Decode Json to Objects
 	$json = json_decode($result);
 	// var_dump($json);
 	// echo $json->row0->empID;
