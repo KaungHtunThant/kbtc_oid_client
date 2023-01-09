@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	// echo "<script>console.log('made it here');</script>";
+	include "includes/qrgen.php";
 
 	if(isset($_POST["empCreate"])){
 		$url = 'http://localhost/kbtc_oid_server/backend.php';
@@ -9,6 +11,16 @@
 		$empPositionID = htmlspecialchars($_POST['empPositionID']);
 		$empDeptID = htmlspecialchars($_POST['empDeptID']);
 		$empJoinDate = htmlspecialchars($_POST['empJoinDate']);
+
+		qrgen($empID, 'employee');
+		$filename = 'assets/qrcodes/employee/'.$empID.'.png';
+
+		if (file_exists($filename)) {
+		    echo "The file $filename exists";
+		} else {
+		    echo "The file $filename does not exist";
+		    die();
+		}
 
 		$data = array(
 			'url' => $url,

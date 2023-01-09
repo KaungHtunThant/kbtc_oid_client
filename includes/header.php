@@ -50,7 +50,7 @@
 	<!-- Sidebar -->
 
 	<!-- Navbar -->
-	<nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+	<nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100">
 	    <!-- Container wrapper -->
 	    <div class="container-fluid">
     		<!-- Toggle button -->
@@ -59,7 +59,7 @@
       		</button>
     		<!-- Brand -->
     		<a class="navbar-brand" href="#">
-        		<img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="25" alt="MDB Logo"/>
+        		<img src="https://miro.medium.com/max/2400/1*-m2HEouAzLy3MCl5D70cMw.png" height="25" alt="KBTC"/>
       		</a>
       		
       		<!-- Right links -->

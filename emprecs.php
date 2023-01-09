@@ -17,6 +17,7 @@
 						<li class="breadcrumb-item active" aria-current="page">Employee Records</li>
 					</ol>
 				</nav>
+				<!-- Return Message -->
 				<div class="container">
 			  		<?php
 			  			if (isset($_SESSION['Message'])) {
@@ -25,64 +26,9 @@
 			  			}
 			  		?>
 			  	</div>
+			  	<!-- Contents -->
 		  		<div class="row px-5">
-		  			<div class="col-md-12 p-5 card">
-		  				<form action="backend.php" class="row g-3 needs-validation" method="POST">
-		  					<h3>New Employee Form</h3>
-		  					<hr>
-		  					<input type="hidden" name="userID" value="<?php echo "sessionID"; ?>">
-		  					<input type="hidden" name="category" value="employee">
-							<div class="col-md-4">
-								<div class="form-outline">
-								  	<input type="text" class="form-control" id="validationCustom01" value="Mark" name="empID" required />
-								  	<label for="validationCustom01" class="form-label">Employee ID</label>
-									<div class="valid-feedback">Valid ID</div>
-									<div class="invalid-feedback">Enter a valid ID</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-outline">
-							  		<input type="text" class="form-control" id="validationCustom02" value="Otto" name="empName" required />
-							  		<label for="validationCustom02" class="form-label">Name</label>
-							  		<div class="valid-feedback">Valid Name</div>
-							  		<div class="invalid-feedback">Enter a valid Name</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="input-group form-outline">
-							  		<input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="empNRC" required />
-							  		<label for="validationCustomUsername" class="form-label">NRC</label>
-							  		<div class="valid-feedback">Valid NRC</div>
-							  		<div class="invalid-feedback">Enter a valid NRC</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-outline">
-							  		<input type="number" class="form-control" id="validationCustom03" name="empPositionID" required />
-							  		<label for="validationCustom03" class="form-label">Position</label>
-							  		<div class="invalid-feedback">Please provide a valid city.</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-outline">
-							  		<input type="text" class="form-control" id="validationCustom04" name="empDeptID" required />
-							  		<label for="validationCustom04" class="form-label">Department</label>
-							  		<div class="invalid-feedback">Please provide a valid zip.</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-outline">
-							  		<input type="text" class="form-control" id="validationCustom05" name="empJoinDate" required />
-							  		<label for="validationCustom05" class="form-label">Join Date</label>
-							  	<div class="invalid-feedback">Please provide a valid zip.</div>
-								</div>
-							</div>
-							<div class="col-12">
-								<button class="btn btn-primary" name="empCreate" type="submit">Submit form</button>
-							</div>
-						</form>
-		  			</div>
-		  			<div class="col-md-12 px-5 py-3 mt-3 card">
+		  			<div class="col-md-12 px-5 py-3 card">
 		  				<!-- <div class="container"> -->
 					  		<?php
 					  			// if (isset($_SESSION['ReadMessage'])) {
@@ -92,7 +38,115 @@
 					  		?>
 					  	<!-- </div> -->
 					  	<h4 class="mt-3">Employee Records</h4>
+					  	<hr>
+					  	<div class="row">
+					  		<div class="col-7 col-md-4">
+					  			<a class="btn btn-primary" data-toggle="modal" data-target="#empCreate">Add New Employee</a>
+					  		</div>
+					  		<div class="col-5 col-md-8"></div>
+					  	</div>
+					  	<!-- Form Modal -->
+						<div class="modal" id="empCreate">
+                            <div class="modal-dialog">
+                                <div class="modal-content ">
+                                	<form action="backend.php" class="needs-validation" method="POST">
+	                                    <!-- Modal Header -->
+	                                    <div class="modal-header">
+	                                        <h4 class="modal-title mx-auto">New Employee Form</h4>
+	                                    </div>
+                                        <!-- Modal body -->
+                                        <div class="modal-body px-5">
+                                        	<div class="row">
+                                        		<!-- <div class="col-12 text-center">
+                                        			<img src="assets/logo.png" alt="logo"/>
+                                        		</div> -->
+							  					<input type="hidden" name="userID" value="<?php echo "sessionID"; ?>">
+							  					<input type="hidden" name="category" value="employee">
+												<div class="col-12 mb-3">
+													<div class="form-outline">
+													  	<input type="text" class="form-control" id="validationCustom01" placeholder="eg.KBTC-123" name="empID" required />
+													  	<label for="validationCustom01" class="form-label">Employee ID</label>
+														<div class="valid-feedback">Valid ID</div>
+														<div class="invalid-feedback">Enter a valid ID</div>
+													</div>
+												</div>
+												<div class="col-12 mb-3">
+													<div class="form-outline">
+												  		<input type="text" class="form-control" id="validationCustom02" placeholder="Otto Oreo" name="empName" required />
+												  		<label for="validationCustom02" class="form-label">Name</label>
+												  		<div class="valid-feedback">Valid Name</div>
+												  		<div class="invalid-feedback">Enter a valid Name</div>
+													</div>
+												</div>
+												<div class="col-12 mb-3">
+													<div class="form-outline">
+												  		<input type="text" class="form-control" id="EmpJoinDate" aria-describedby="inputGroupPrepend" name="EmpJoinDate" required />
+												  		<label for="EmpJoinDate" class="form-label">Join Date</label>
+												  		<div class="valid-feedback">Valid Date</div>
+												  		<div class="invalid-feedback">Enter a valid date</div>
+													</div>
+												</div>
+												<div class="col-12 text-left">
+													<label for="NRC1" class="form-label">NRC</label>
+													<div class="row form-group">
+														<div class="col-3 mb-3">
+													  		<select name="NRC1" class="form-select" id="NRC1">
+													  			<option>12/</option>
+													  			<option>13/</option>
+													  		</select>
+														</div>
+														<div class="col-3 mb-3 px-0">
+													  		<select name="NRC2" class="form-select" id="NRC2">
+													  			<option>AhSaNa</option>
+													  			<option>Blah Blah Blah</option>
+													  		</select>
+														</div>
+														<div class="col-2">
+															<div class="form-outline">
+														  		<input type="text" class="form-control" id="NRC3" aria-describedby="inputGroupPrepend" name="NRC3" value="(N)" disabled/>
+															</div>
+														</div>
+														<div class="col-4 mb-3 pl-0">
+															<div class="input-group form-outline">
+														  		<input type="number" class="form-control" id="NRC4" aria-describedby="inputGroupPrepend" name="NRC4" placeholder="123456" required />
+														  		<label for="validationCustomUsername" class="form-label">NRC No.</label>
+														  		<div class="valid-feedback">Valid NRC</div>
+														  		<div class="invalid-feedback">Enter a valid NRC</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 mb-3 text-left">
+													<div class="form-outline float-left">
+														<label for="NRC5" class="form-label float-left">Position</label>
+														<select name="NRC5" class="form-select" id="NRC5" id="validationCustom03">
+												  			<option value="1">IT Associate</option>
+												  			<option value="2">HR Associate</option>
+												  		</select>
+													</div>
+												</div>
+												<div class="col-12 mb-3 text-left">
+													<div class="form-outline float-left">
+														<label for="NRC6" class="form-label">Department</label>
+														<select name="NRC6" class="form-select" id="NRC6" id="validationCustom04">
+												  			<option value="1">IT</option>
+												  			<option value="2">HR</option>
+												  		</select>
+													</div>
+												</div>
+											</div>
+                                        </div>
+                                            <!-- Modal footer -->
+                                        <div class="modal-footer px-5">
+                                        	<button class="btn btn-primary" name="empCreate" type="submit">Submit form</button>
+                                            <button type="button" class="btn btn-outline-info" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
 					  	<br>
+					  	<!-- Employees Table -->
 				  		<table class="table table-sm table-striped table-bordered table-light text-center w-100 table-responsive">
 			  				<thead>
 			  					<tr>
@@ -103,9 +157,17 @@
 			  					</tr>
 			  				</thead>
 				  			<?php
-				  				include 'backend2.php';
-				  				$rows = empRead();
-				  				$i = 0;
+				  				include 'functions.php'; //include Functions
+				  				//Pagenation
+				  				// if(isset($_SESSION['empPagenation'])){
+				  				// 	$empPagenation = $_SESSION['empPagenation'];
+				  				// }
+				  				// else{
+				  				// 	$empPagenation = 0;
+				  				// 	unset($_SESSION['empPagenation']);
+				  				// }
+				  				$rows = empRead(); //get objects
+				  				$i = 0;	//iteration
 				  				while($i<$rows->ReadCount){
 				  					$tmp = 'row'.$i++;
 				  			?>
@@ -113,7 +175,32 @@
 				  				<td><?php echo $rows->{$tmp}->empID; ?></td>
 				  				<td><?php echo $rows->{$tmp}->empName; ?></td>
 				  				<td><?php echo $rows->{$tmp}->empJoinDate; ?></td>
-				  				<td><img src="assets/qrcode.png" alt="Qrcode"></td>
+				  				<td>
+									<a class="btn btn-primary" data-toggle="modal" data-target="#ShowQR<?php echo $rows->{$tmp}->empID; ?>" >Show</a>
+				  				</td>
+					  			<!-- Modal -->
+								<div class="modal" id="ShowQR<?php echo $rows->{$tmp}->empID; ?>">
+	                                <div class="modal-dialog">
+	                                    <div class="modal-content ">
+
+	                                        <!-- Modal Header -->
+	                                        <div class="modal-header">
+	                                            <h4 class="modal-title"><?php echo $rows->{$tmp}->empName; ?>'s QR Code</h4>
+	                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+	                                        </div>
+	                                        <form action="postfunctions.php" method="post">
+	                                            <!-- Modal body -->
+	                                            <div class="modal-body text-center">
+	                                                <img src="assets/qrcodes/employee/<?php echo $rows->{$tmp}->empID; ?>.png" alt="Qrcode">
+	                                            </div>
+	                                                <!-- Modal footer -->
+	                                            <div class="modal-footer">
+	                                                <button type="button" class="btn btn-outline-info" data-dismiss="modal">Close</button>
+	                                            </div>
+	                                        </form>
+	                                    </div>
+	                                </div>
+	                            </div>
 				  			</tr>
 				  			<?php
 				  				}
@@ -126,18 +213,6 @@
 								<li class="page-item"><a class="page-link" href="#">1</a></li>
 								<li class="page-item"><a class="page-link" href="#">2</a></li>
 								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
 								<li class="page-item"><a class="page-link" href="#">Next</a></li>
 							</ul>
 						</nav>
@@ -146,8 +221,8 @@
 		  	</div>
 		</main>
 		<!--Main layout-->
-
-		<!-- MDB -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+		<?php
+			include 'includes/footer.php';
+		?>
 	</body>
 </html>

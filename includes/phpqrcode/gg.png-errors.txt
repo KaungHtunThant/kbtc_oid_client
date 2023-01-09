@@ -1,0 +1,1 @@
+2022-12-28 09:00:10: imagepng(img/gg.png): Failed to open stream: No such file or directory
