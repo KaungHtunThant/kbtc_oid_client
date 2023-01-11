@@ -118,6 +118,15 @@
 												</div>
 												<div class="col-12 mb-3 text-left">
 													<div class="form-outline float-left">
+														<label for="empDeptID" class="form-label">Department</label>
+														<select name="empDeptID" class="form-select" id="empDeptID">
+												  			<option value="1">IT</option>
+												  			<option value="2">HR</option>
+												  		</select>
+													</div>
+												</div>
+												<div class="col-12 mb-3 text-left">
+													<div class="form-outline float-left">
 														<label for="empPositionID" class="form-label float-left">Position</label>
 														<select name="empPositionID" class="form-select" id="empPositionID">
 												  			<option value="1">IT Associate</option>
@@ -125,13 +134,12 @@
 												  		</select>
 													</div>
 												</div>
-												<div class="col-12 mb-3 text-left">
-													<div class="form-outline float-left">
-														<label for="empDeptID" class="form-label">Department</label>
-														<select name="empDeptID" class="form-select" id="empDeptID">
-												  			<option value="1">IT</option>
-												  			<option value="2">HR</option>
-												  		</select>
+												<div class="col-12 mb-3">
+													<div class="form-outline">
+												  		<input type="text" class="form-control" id="empPhone" aria-describedby="inputGroupPrepend" name="empPhone" required />
+												  		<label for="empPhone" class="form-label">Phone No.</label>
+												  		<div class="valid-feedback">Valid Phone No.</div>
+												  		<div class="invalid-feedback">Enter a valid phone no.</div>
 													</div>
 												</div>
 											</div>
@@ -177,7 +185,7 @@
 				  				<td><?php echo $rows->{$tmp}->empJoinDate; ?></td>
 				  				<td>
 									<a class="btn btn-primary" data-toggle="modal" data-target="#ShowQR<?php echo $rows->{$tmp}->empID; ?>" >Show</a>
-									<a class="btn btn-primary" href="employee?empID=<?php echo $rows->{$tmp}->empID; ?>&&empKey=<?php echo $rows->{$tmp}->empKey; ?>" >Detail</a>
+									<a class="btn btn-primary" href="emprecs/staff.php?empID=<?php echo $rows->{$tmp}->empID; ?>&&empKey=<?php echo $rows->{$tmp}->empKey; ?>" >Detail</a>
 				  				</td>
 					  			<!-- Modal -->
 								<div class="modal" id="ShowQR<?php echo $rows->{$tmp}->empID; ?>">
