@@ -8,11 +8,11 @@
 		$url = 'http://localhost/kbtc_oid_server/backend.php';
 		$empID = htmlspecialchars($_POST['empID']);
 		$empName = htmlspecialchars($_POST['empName']);
-		$NRC1 = htmlspecialchars($_POST['NRC1']);
-		$NRC2 = htmlspecialchars($_POST['NRC2']);
-		$NRC3 = htmlspecialchars($_POST['NRC3']);
-		$NRC4 = htmlspecialchars($_POST['NRC4']);
-		$empNRC = $NRC1.$NRC2.$NRC3.$NRC4;
+		$NRC1 = $_POST['NRC1'];
+		$NRC2 = $_POST['NRC2'];
+		$NRC3 = $_POST['NRC3'];
+		$NRC4 = $_POST['NRC4'];
+		$empNRC = $NRC1.$NRC2.'(N)'.$NRC4;
 		$empPositionID = htmlspecialchars($_POST['empPositionID']);
 		$empDeptID = htmlspecialchars($_POST['empDeptID']);
 		$empJoinDate = htmlspecialchars($_POST['empJoinDate']);
