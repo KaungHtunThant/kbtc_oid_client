@@ -55,7 +55,7 @@ function empReadDetails($empID){
 		$_SESSION['ReadMessage'] = $json->ReadMessage;
 	}
 
-	var_dump($result);
+	// var_dump($result);
 	//Decode Json to Objects
 	$json = json_decode($result);
 	// var_dump($json);

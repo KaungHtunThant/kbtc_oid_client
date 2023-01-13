@@ -24,13 +24,23 @@
 		        		</div>
 		        	</div>
 		        </a>
-		        <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+		        <a href="studrecs.php" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
 		        	<div class="row">
 		        		<div class="col-1">
 		        			<i class="fas fa-tachometer-alt fa-fw me-3"></i>
 		        		</div>
 		        		<div class="col">
 		        			<span>Student Records</span>
+		        		</div>
+		        	</div>
+		        </a>
+				<a href="adminsample.php" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+		        	<div class="row">
+		        		<div class="col-1">
+		        			<i class="fas fa-tachometer-alt fa-fw me-3"></i>
+		        		</div>
+		        		<div class="col">
+		        			<span>User Records</span>
 		        		</div>
 		        	</div>
 		        </a>
