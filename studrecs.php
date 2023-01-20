@@ -41,12 +41,12 @@
 					  	<hr>
 					  	<div class="row">
 					  		<div class="col-7 col-md-4">
-					  			<a class="btn btn-primary" data-toggle="modal" data-target="#empCreate">Add New Student</a>
+							  <a class="btn btn-primary" data-toggle="modal" data-target="#studCreate">Add New Student</a>
 					  		</div>
 					  		<div class="col-5 col-md-8"></div>
 					  	</div>
 					  	<!-- Form Modal -->
-						<div class="modal" id="empCreate">
+						<div class="modal" id="studCreate">
                             <div class="modal-dialog">
                                 <div class="modal-content ">
                                 	<form action="postfunctions.php" class="needs-validation" method="POST">
@@ -61,7 +61,7 @@
                                         			<img src="assets/logo.png" alt="logo"/>
                                         		</div> -->
 							  					<input type="hidden" name="userID" value="<?php echo "sessionID"; ?>">
-							  					<input type="hidden" name="category" value="student">
+							  					<input type="hidden" name="category" value="students">
 												<div class="col-12 mb-3">
 													<div class="form-outline">
 													  	<input type="text" class="form-control" id="validationCustom01" placeholder="Enter Student's ID" name="studID" required />
@@ -128,7 +128,7 @@
 												</div>
 												<div class="col-12 mb-3">
 													<div class="form-outline">
-												  		<input type="text" class="form-control" id="validationCustom09" aria-describedby="inputGroupPrepend" name="studschoolEmergency" required />
+												  		<input type="text" class="form-control" id="validationCustom09" aria-describedby="inputGroupPrepend" name="studschoolPhone" required />
 												  		<label for="validationCustom09" class="form-label">School Emergency Call</label>
 												  		<div class="valid-feedback">Valid Phone No.</div>
 												  		<div class="invalid-feedback">Enter a valid phone no.</div>
@@ -138,7 +138,7 @@
                                         </div>
                                             <!-- Modal footer -->
                                         <div class="modal-footer px-5">
-                                        	<button class="btn btn-primary" name="empCreate" type="submit">Submit form</button>
+                                        	<button class="btn btn-primary" name="studCreate" type="submit">Submit form</button>
                                             <button type="button" class="btn btn-outline-info" data-dismiss="modal">Close</button>
                                         </div>
                                     </form>
@@ -167,20 +167,20 @@
 				  				// 	$empPagenation = 0;
 				  				// 	unset($_SESSION['empPagenation']);
 				  				// }
-				  				$rows = empRead(); //get objects
+				  				$rows = studRead(); //get objects
 				  				$i = 0;	//iteration
 				  				while($i<$rows->ReadCount){
 				  					$tmp = 'row'.$i++;
 				  			?>
 				  			<tr>
-				  				<td><?php echo $rows->{$tmp}->studentID; ?></td>
-				  				<td><?php echo $rows->{$tmp}->studentName; ?></td>
-				  				<td><?php echo $rows->{$tmp}->Batch; ?></td>
-				  				<td><?php echo $rows->{$tmp}->Class; ?></td>
+				  				<td><?php echo $rows->{$tmp}->studID; ?></td>
+				  				<td><?php echo $rows->{$tmp}->studName; ?></td>
+				  				<td><?php echo $rows->{$tmp}->studBatch; ?></td>
+				  				<td><?php echo $rows->{$tmp}->studClass; ?></td>
 
 				  				<td>
-									<a class="btn btn-primary" data-toggle="modal" data-target="#ShowQR<?php echo $rows->{$tmp}->empID; ?>" >Show</a>
-									<a class="btn btn-primary" href="emprecs/staff.php?empID=<?php echo $rows->{$tmp}->empID; ?>&&empKey=<?php echo $rows->{$tmp}->empKey; ?>" >Detail</a>
+									<a class="btn btn-primary" data-toggle="modal" data-target="#ShowQR<?php echo $rows->{$tmp}->studID; ?>" >Show</a>
+									<a class="btn btn-primary" href="emprecs/staff.php?empID=<?php echo $rows->{$tmp}->studID; ?>&&empKey=<?php echo $rows->{$tmp}->studKey; ?>" >Detail</a>
 				  				</td>
 					  			<!-- Modal -->
 								<div class="modal" id="ShowQR<?php echo $rows->{$tmp}->studentID; ?>">

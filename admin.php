@@ -27,22 +27,20 @@
                 <div class="col-md-6">
                     <div class="card mx-5 px-0"> 
                         <div class="container mx-0 px-0 ">
-                            <h4 class="w-100 text-light bg-info p-3"><b>Admin view</b></h4> 
+                            <h4 class="w-100 text-light bg-info p-3"><b>KBTC</b></h4> 
                             <div class="container p-5">
                                 <div class="row">
                                     <div class="col-md-8">
                                         
                                         <p>ID: <?php echo $test->row0->empID; ?></p>
                                         <p>Name: <?php echo $test->row0->empName; ?></p>
-                                        <p>Join Date: <?php echo $test ->row0->empJoinDate; ?></p>
-                                        <p>Department: <?php echo $test->row0->empDeptID; ?></p>
-                                        <p>Position: <?php echo $test->row0->empPositionID; ?></p>
+                                        <p>Join Date: <?php echo $test->row0->empJoinDate ?></p>
+                                        <p>Department: IT</p>
+                                        <p>Position: IT Associate</p>
                                         <p>NRC: <?php echo $test->row0->empNRC; ?></p>
-                                        <!-- <p>Coporate Phone No: 09-28392932</p>
+                                        <p>Coporate Phone No: 09-28392932</p>
                                         <p>Emergency Contact Person: Bob</p>
-                                        <p>Emergency Contact No: 09-28392932</p> -->
-                                        
-                                        
+                                        <p>Emergency Contact No: 09382948302</p>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="border border-info p-2">

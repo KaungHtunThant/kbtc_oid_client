@@ -186,7 +186,7 @@
 				  				<td><?php echo $rows->{$tmp}->empJoinDate; ?></td>
 				  				<td>
 									<a class="btn btn-primary" data-toggle="modal" data-target="#ShowQR<?php echo $rows->{$tmp}->empID; ?>" >Show</a>
-									<a class="btn btn-primary" href="afterscanadmin.php?empID=<?php echo $rows->{$tmp}->empID; ?>&&empKey=<?php echo $rows->{$tmp}->empKey; ?>" >Detail</a>
+									<a class="btn btn-primary" href="staff.php?empID=<?php echo $rows->{$tmp}->empID; ?>&&empKey=<?php echo $rows->{$tmp}->empKey; ?>" >Detail</a>
 									<a class="btn btn-primary" data-toggle="modal" data-target="#Edit<?php echo $rows->{$tmp}->empID; ?>">Edit</a>
 				  				</td>
 					  			<!-- Modal -->
@@ -296,8 +296,8 @@
 															<div class="form-outline float-left">
 																<label for="empDeptID" class="form-label">Department</label>
 																<select name="empDeptID" class="form-select" id="empDeptID">
-																	<option value="1">IT</option>
-																	<option value="2">HR</option>
+																	<option value="IT">IT</option>
+																	<option value="HR">HR</option>
 																</select>
 															</div>
 														</div>
@@ -305,8 +305,8 @@
 															<div class="form-outline float-left">
 																<label for="empPositionID" class="form-label float-left">Position</label>
 																<select name="empPositionID" class="form-select" id="empPositionID">
-																	<option value="1">IT Associate</option>
-																	<option value="2">HR Associate</option>
+																	<option value="IT Associate">IT Associate</option>
+																	<option value="HR Associate">HR Associate</option>
 																</select>
 															</div>
 														</div>
